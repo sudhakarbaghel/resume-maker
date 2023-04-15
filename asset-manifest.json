@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/resume-maker/static/css/main.34c5264d.css",
-    "main.js": "/resume-maker/static/js/main.9a380ec4.js",
+    "main.css": "/resume-maker/static/css/main.27a5f00d.css",
+    "main.js": "/resume-maker/static/js/main.421c9ad9.js",
     "static/js/703.d9b44add.chunk.js": "/resume-maker/static/js/703.d9b44add.chunk.js",
     "static/js/513.ec043909.chunk.js": "/resume-maker/static/js/513.ec043909.chunk.js",
     "index.html": "/resume-maker/index.html",
-    "main.34c5264d.css.map": "/resume-maker/static/css/main.34c5264d.css.map",
-    "main.9a380ec4.js.map": "/resume-maker/static/js/main.9a380ec4.js.map",
+    "main.27a5f00d.css.map": "/resume-maker/static/css/main.27a5f00d.css.map",
+    "main.421c9ad9.js.map": "/resume-maker/static/js/main.421c9ad9.js.map",
     "703.d9b44add.chunk.js.map": "/resume-maker/static/js/703.d9b44add.chunk.js.map",
     "513.ec043909.chunk.js.map": "/resume-maker/static/js/513.ec043909.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.34c5264d.css",
-    "static/js/main.9a380ec4.js"
+    "static/css/main.27a5f00d.css",
+    "static/js/main.421c9ad9.js"
   ]
 }
