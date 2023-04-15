@@ -8,24 +8,34 @@ import HourglassAnimation from "../hourglass/HourGlass";
 export default function TopComponent({ downloadResume, loading }) {
   const [image, setImage] = useState(null);
   const [draggingOver, setDraggingOver] = useState(false);
-  const [data, setData] = useState("Edit fields to build resume...");
-  const [title, setTitle] = useState("");
-  let abc = "Enter your name here...✒️";
-  useEffect(() => {
-    if (data === "") {
-       for (let i = 0; i <= abc.length; i++) {
-         setTimeout(() => setTitle(abc.slice(0, i)), i * 100); // set title from length 0 to i
-       }
-      return;
-    }
+    const strings = [
+      "Edit fields to build your ❤️‍🔥 resume..",
+      "Enter your name here...🖊️",
+    ];
+    const [stringIndex, setStringIndex] = useState(0);
+    const currentString = strings[stringIndex];
+    const [charIndex, setCharIndex] = useState(0);
+    const [text, setText] = useState("");
+    const [isFirstStringComplete, setIsFirstStringComplete] = useState(false);
 
-    const typingTimer = setTimeout(() => {
-      setData((prevData) => prevData.slice(0, -1)); // remove the last dot
-    }, 170);
-
-    return () => clearTimeout(typingTimer);
-  }, [data]);
-
+    useEffect(() => {
+      let timeout;
+      if (charIndex < currentString.length) {
+        timeout = setTimeout(() => {
+          setText(text + currentString.charAt(charIndex));
+          setCharIndex(charIndex + 1);
+        }, 100);
+      } else if (stringIndex < strings.length - 1) {
+        timeout = setTimeout(() => {
+          setStringIndex(stringIndex + 1);
+          setCharIndex(0);
+          setText("");
+          setIsFirstStringComplete(true);
+        }, 500);
+      }
+      return () => clearTimeout(timeout);
+    }, [charIndex, currentString, stringIndex, text, strings]);
+  
   const handleDrop = (event) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
@@ -139,7 +149,8 @@ export default function TopComponent({ downloadResume, loading }) {
           id="resume_new"
           contentEditable
         >
-          {data === "" ? title : data}
+          {/* {data === "" ? title : data} */}
+          {text}
         </span>
         <span style={{ outlineColor: "white", paddingLeft: 3 }} contentEditable>
           Graphic Designer & Web Developer

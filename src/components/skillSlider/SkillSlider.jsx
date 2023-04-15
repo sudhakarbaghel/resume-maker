@@ -24,14 +24,7 @@ export default function SkillSlider({ id, index, removeFx }) {
   useEffect(() => {
     const timeouts = [];
     for (let i = 0; i <= 300; i++) {
-      if (i == 1) {
-        setOpacity(1);
-      }
-      
       const timeoutId = setTimeout(() => {
-        if (i == 300) {
-          setOpacity(0);
-        }
         setSliderPosition(i);
       }, 10 * i);
       timeouts.push(timeoutId);
@@ -61,6 +54,7 @@ export default function SkillSlider({ id, index, removeFx }) {
       </div>
       <span contentEditable>{id}</span>
       <div
+      
         className="sliderContainer"
         onClick={handleClick}
         onDrag={handleClick}
@@ -72,7 +66,6 @@ export default function SkillSlider({ id, index, removeFx }) {
           style={{
             left: `${sliderPosition - 4}px`,
             backgroundColor: index % 2 === 0 ? "#4a8adc" : "#37bc9b",
-           
           }}
         />
       </div>
