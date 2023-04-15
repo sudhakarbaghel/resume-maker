@@ -1,8 +1,12 @@
 .home{
-     display: flex;
+     /* display: flex;
      align-items: center;
      justify-content: center;
+     overflow: scroll; */
+     /* width:100%; */
+     /* display: none; */
 }
 .homeContainer{
-    max-width: 800px;
+ width:800px;
+ margin: auto;
 }

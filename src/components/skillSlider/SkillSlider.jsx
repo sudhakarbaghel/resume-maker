@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleMinus, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 export default function SkillSlider({ id, index, removeFx }) {
-  console.log(index)
+  console.log(index);
   const [sliderPosition, setSliderPosition] = useState(0);
   const [value, setValue] = useState(0);
+  const [opacity, setOpacity] = useState(0);
   const handleClick = (e) => {
     const containerPosition = e.target.getBoundingClientRect().left;
     console.log(containerPosition);
@@ -22,10 +23,17 @@ export default function SkillSlider({ id, index, removeFx }) {
   };
   useEffect(() => {
     const timeouts = [];
-    for (let i = 0; i <= 100; i++) {
+    for (let i = 0; i <= 300; i++) {
+      if (i == 1) {
+        setOpacity(1);
+      }
+      
       const timeoutId = setTimeout(() => {
-        setValue(i);
-      }, 20 * i);
+        if (i == 300) {
+          setOpacity(0);
+        }
+        setSliderPosition(i);
+      }, 10 * i);
       timeouts.push(timeoutId);
     }
     return () => {
@@ -44,15 +52,15 @@ export default function SkillSlider({ id, index, removeFx }) {
     const positionPercent = (sliderPosition / 300) * 100; // calculate position as a percentage
     return `linear-gradient(to right, ${selectedColor} ${positionPercent}%, ${baseColor} ${positionPercent}%)`;
   };
- const classname = index % 2 === 0 ? "slider" : "slider2";
- 
+  const classname = index % 2 === 0 ? "slider" : "slider2";
+
   return (
     <div className="skillSlider">
       <div className="remove skillSliderRemove" onClick={removeFx}>
         <FontAwesomeIcon icon={faCircleMinus} style={{ color: "#975959" }} />
       </div>
       <span contentEditable>{id}</span>
-      {/* <div
+      <div
         className="sliderContainer"
         onClick={handleClick}
         onDrag={handleClick}
@@ -64,10 +72,11 @@ export default function SkillSlider({ id, index, removeFx }) {
           style={{
             left: `${sliderPosition - 4}px`,
             backgroundColor: index % 2 === 0 ? "#4a8adc" : "#37bc9b",
+           
           }}
         />
-      </div> */}
-      <div class="sliderCdcontainer">
+      </div>
+      {/* <div class="sliderCdcontainer">
        
         <input
           className={`${classname}`}
@@ -76,7 +85,7 @@ export default function SkillSlider({ id, index, removeFx }) {
           style={{}}
           onChange={(event) => setValue(event.target.value)}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

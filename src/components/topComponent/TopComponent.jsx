@@ -134,7 +134,11 @@ export default function TopComponent({ downloadResume, loading }) {
         />
       </div>
       <div className="topComponentDetails">
-        <span style={{ outlineColor: "white", paddingLeft: 3 }} contentEditable>
+        <span
+          style={{ outlineColor: "white", paddingLeft: 3 }}
+          id="resume_new"
+          contentEditable
+        >
           {data === "" ? title : data}
         </span>
         <span style={{ outlineColor: "white", paddingLeft: 3 }} contentEditable>

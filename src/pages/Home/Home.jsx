@@ -19,6 +19,7 @@ export default function Home() {
     }, 4500);
     const html = document.getElementsByTagName("HTML")[0];
     const body = document.getElementsByTagName("BODY")[0];
+    
     let htmlWidth = html.clientWidth;
     let bodyWidth = body.clientWidth;
 
@@ -55,7 +56,10 @@ export default function Home() {
           // downloadElements.forEach((element) => {
           //   element.style.display = "block";
           // });
-        saveAs(image, "resume.png");
+        const name1 = document.getElementById('resume_new').innerText
+        console.log(name1)
+        
+        saveAs(image, `${name1}_resume.png`);
 
         html.style.width = null;
         body.style.width = null;

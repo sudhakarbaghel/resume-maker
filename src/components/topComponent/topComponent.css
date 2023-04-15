@@ -19,6 +19,12 @@ height: 140px;
     padding: 8px;
     position: relative;
     top:15px;
+    transition: all .5s ease;
+
+}
+.image-uploader:hover{
+    scale:1.05;
+      cursor: pointer;
 }
 .topComponentDetails{
     display: flex;

@@ -11,7 +11,7 @@ export default function Topbar() {
   return (
     <div className="topbar">
       <a href="https://www.linkedin.com/in/sudhakar-singh-99b8441b2/">
-        <span>Sudhakar Singh</span>
+        <span id="">Sudhakar Singh</span>
       </a>
       <div>
         <a href="https://twitter.com/SUDHAKARBAGHEL2" target="_blank">
