@@ -34,7 +34,12 @@ export default function WorkExp() {
         <div className="add" onClick={addFx}>
           <FontAwesomeIcon
             icon={faCirclePlus}
-            style={{ color: "#4a88dc", width: "25px", height: "25px" }}
+            style={{
+              color: "#4a88dc",
+              width: "25px",
+              height: "25px",
+              cursor: "pointer",
+            }}
           />
         </div>
       </div>
