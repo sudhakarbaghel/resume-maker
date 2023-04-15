@@ -9,7 +9,7 @@ const sliderIds = [
   "CSS",
   "Javascript",
   "React",
-  `Type your new skill ❤️‍🔥 `,
+  `Type your new skill ❤️‍🔥❤️‍🔥 `,
 ];
 
 export default function Skills() {
@@ -21,7 +21,7 @@ export default function Skills() {
   }
 
   function addFx() {
-    const newSliderId = `Type your new skill ❤️‍🔥 `;
+    const newSliderId = `Type your new skill ❤️‍🔥❤️‍🔥 `;
     sliderIds.push(newSliderId);
     setSliderCount(sliderCount + 1);
   }
