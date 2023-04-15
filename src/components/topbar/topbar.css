@@ -1,0 +1,19 @@
+.topbar{
+    display: flex;
+    justify-content: space-between;
+     padding: 20px 0px;
+}
+.topbar>a>span{
+    color: #434a54;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+.topbar>a{
+text-decoration: none;
+}
+.topbar>div{
+    display: flex;
+    gap:15px
+}

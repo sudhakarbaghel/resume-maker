@@ -1,0 +1,23 @@
+.skills {
+  padding: 25px;
+  border-bottom: 1px solid lightgray;
+  position: relative;
+}
+.skillsWrap {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+}
+.skillsAdd{
+   
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.skills>div:nth-child(1){
+display: flex;
+align-items: center;
+gap:20px
+}

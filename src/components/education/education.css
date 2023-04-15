@@ -1,0 +1,10 @@
+.workExp{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    border-bottom: 1px solid lightgray;
+
+    
+}
+ 

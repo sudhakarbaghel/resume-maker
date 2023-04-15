@@ -1,0 +1,23 @@
+.workExp{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    border-bottom: 1px solid lightgray;
+
+    
+}
+ 
+.workExp>div:nth-child(1){
+   display: flex;
+align-items: center;
+gap:20px
+}
+
+.workExpAdd{
+     width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+ 
