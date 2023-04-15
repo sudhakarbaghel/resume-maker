@@ -41,6 +41,7 @@ export default function Skills() {
         {sliderIds.map((id, index) => (
           <SkillSlider
             key={id}
+            // index={index % 2 === 0 ? "#4a8adc" : "#37bc9b"}
             index={index}
             id={id}
             removeFx={() => removeFx(index)}

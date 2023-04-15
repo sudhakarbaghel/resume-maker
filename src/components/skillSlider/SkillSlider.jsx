@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleMinus, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 export default function SkillSlider({ id, index, removeFx }) {
+  console.log(index)
   const [sliderPosition, setSliderPosition] = useState(0);
-
+  const [value, setValue] = useState(0);
   const handleClick = (e) => {
     const containerPosition = e.target.getBoundingClientRect().left;
     console.log(containerPosition);
@@ -19,6 +20,18 @@ export default function SkillSlider({ id, index, removeFx }) {
       setSliderPosition(e.nativeEvent.offsetX);
     }
   };
+  useEffect(() => {
+    const timeouts = [];
+    for (let i = 0; i <= 100; i++) {
+      const timeoutId = setTimeout(() => {
+        setValue(i);
+      }, 20 * i);
+      timeouts.push(timeoutId);
+    }
+    return () => {
+      timeouts.forEach((timeoutId) => clearTimeout(timeoutId));
+    };
+  }, []);
 
   const getGradient = () => {
     const baseColor = "#e9ecef";
@@ -31,14 +44,15 @@ export default function SkillSlider({ id, index, removeFx }) {
     const positionPercent = (sliderPosition / 300) * 100; // calculate position as a percentage
     return `linear-gradient(to right, ${selectedColor} ${positionPercent}%, ${baseColor} ${positionPercent}%)`;
   };
-
+ const classname = index % 2 === 0 ? "slider" : "slider2";
+ 
   return (
     <div className="skillSlider">
       <div className="remove skillSliderRemove" onClick={removeFx}>
         <FontAwesomeIcon icon={faCircleMinus} style={{ color: "#975959" }} />
       </div>
       <span contentEditable>{id}</span>
-      <div
+      {/* <div
         className="sliderContainer"
         onClick={handleClick}
         onDrag={handleClick}
@@ -52,10 +66,17 @@ export default function SkillSlider({ id, index, removeFx }) {
             backgroundColor: index % 2 === 0 ? "#4a8adc" : "#37bc9b",
           }}
         />
+      </div> */}
+      <div class="sliderCdcontainer">
+       
+        <input
+          className={`${classname}`}
+          value={value}
+          type="range"
+          style={{}}
+          onChange={(event) => setValue(event.target.value)}
+        />
       </div>
-      {/* <div class="sliderCdcontainer">
-       <input className="slider" type="range" />
-    </div> */}
     </div>
   );
 }

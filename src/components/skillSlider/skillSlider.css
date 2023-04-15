@@ -70,8 +70,22 @@ cursor: pointer;
     cursor: pointer;
     border-radius: 0; /* iOS */
 }
+ .slider2 { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 12px;
+    width: 300px;
+    /* width: 200px; */
+    cursor: pointer;
+    border-radius: 0; /* iOS */
+}
 
 .slider::-webkit-slider-runnable-track {
+    background: #ddd;
+}
+.slider2::-webkit-slider-runnable-track {
     background: #ddd;
 }
 
@@ -82,18 +96,24 @@ cursor: pointer;
  */
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 14px; /* 1 */
+    width: 0px; 
     height: 12px;
     background: #fff;
-    box-shadow: -200px 0 0 200px #4a8adc; /* 2 */
-    border: 2px solid #999; /* 1
-     */
-    /* border-radius: 50%; */
-    /* display: none; */
-     
+    box-shadow: -200px 0 0 200px #4a8adc; 
+}
+.slider2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0px; 
+    height: 12px;
+    background: #fff;
+    box-shadow: -200px 0 0 200px #37bc9b; 
 }
 
 .slider::-moz-range-track {
+    height: 12px;
+    background: #ddd;
+}
+.slider2::-moz-range-track {
     height: 12px;
     background: #ddd;
 }
@@ -107,8 +127,20 @@ cursor: pointer;
     box-shadow: -200px 0 0 200px #4a8adc;
     box-sizing: border-box;
 }
+.slider2::-moz-range-thumb {
+    background: #fff;
+    height: 12px;
+    width: 20px;
+    border: 3px solid #999;
+    border-radius: 0 !important;
+    box-shadow: -200px 0 0 200px #37bc9b;
+    box-sizing: border-box;
+}
 
 .slider::-ms-fill-lower { 
+    background:#4a8adc;
+}
+.slider2::-ms-fill-lower { 
     background:#4a8adc;
 }
 
@@ -119,12 +151,25 @@ cursor: pointer;
     width: 20px;
     box-sizing: border-box;
 }
+.slider2::-ms-thumb { 
+    background: #fff;
+    border: 2px solid #999;
+    height: 12px;
+    width: 20px;
+    box-sizing: border-box;
+}
 
 .slider::-ms-ticks-after { 
     display: none; 
 }
+.slider2::-ms-ticks-after { 
+    display: none; 
+}
 
 .slider::-ms-ticks-before { 
+    display: none; 
+}
+.slider2::-ms-ticks-before { 
     display: none; 
 }
 
@@ -134,7 +179,16 @@ cursor: pointer;
     height: 12px;
     border: none;
 }
+.slider2::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 12px;
+    border: none;
+}
 
 .slider::-ms-tooltip { 
+    display: none;
+}
+.slider2::-ms-tooltip { 
     display: none;
 }
