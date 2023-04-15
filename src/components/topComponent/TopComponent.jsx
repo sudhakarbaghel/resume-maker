@@ -10,7 +10,7 @@ export default function TopComponent({ downloadResume, loading }) {
   const [draggingOver, setDraggingOver] = useState(false);
   const [data, setData] = useState("Edit fields to build resume...");
   const [title, setTitle] = useState("");
-  let abc = "Enter your name here...";
+  let abc = "Enter your name here...✒️";
   useEffect(() => {
     if (data === "") {
        for (let i = 0; i <= abc.length; i++) {

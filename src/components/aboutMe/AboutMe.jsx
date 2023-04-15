@@ -5,7 +5,7 @@ export default function AboutMe() {
   const [title, setTitle] = useState("");
   let abc = `Hello! I'm Joyce Harrison.I am passionate about UI/UX design and Web
           Design. I am a skilled Front-end Developer and master of Graphic
-          Design tools such as Photoshop and sketch.`
+          Design tools such as Photoshop and sketch...🖊️`;
 
   useEffect(() => {
     const timeouts = [];
@@ -30,17 +30,13 @@ export default function AboutMe() {
     };
   }, []);
 
-
   return (
     <div className="aboutMe">
       <div className="aboutMeLeftBox">
         <span style={{ padding: 3 }} className="catTitle">
           About Me
         </span>
-        <p
-          contentEditable
-          style={{ outlineColor: "lightgray", padding: 3 }}
-        >
+        <p contentEditable style={{ outlineColor: "lightgray", padding: 3 }}>
           {title}
         </p>
       </div>
